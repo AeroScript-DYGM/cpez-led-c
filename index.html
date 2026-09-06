@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f3">
+  <title>El software que toca el mundo físico · Libro interactivo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="wwwroot/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#reader">Ir al contenido del libro</a>
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar" aria-label="Índice del libro">
+      <div class="brand"><span class="brand__mark">C</span><span>Microcontroladores</span></div>
+      <div class="book-meta"><span>LIBRO INTERACTIVO</span><strong>El software que<br>toca el mundo físico</strong></div>
+      <nav class="toc" aria-label="Capítulos">
+        <p class="toc__label">Contenido</p>
+        <button class="toc__item is-active" data-page="0"><b>—</b><span>Portada e índice</span></button>
+        <button class="toc__item" data-page="1"><b>I</b><span>GPIO y el LED</span></button>
+        <button class="toc__item" data-page="2"><b>II</b><span>Bits y registros</span></button>
+        <button class="toc__item" data-page="3"><b>III</b><span>El reto (con cuidado)</span></button>
+      </nav>
+      <div class="reading-progress"><div><span>Tu avance</span><strong id="progress-label">1 de 4</strong></div><div class="progress-track"><span id="progress-bar"></span></div></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menu-button" aria-label="Abrir índice" aria-expanded="false">☰</button>
+        <p id="chapter-kicker">PORTADA · ÍNDICE</p>
+        <div class="topbar__tools">
+          <button class="icon-button" id="contrast-button" aria-label="Modo de lectura nocturna" title="Modo de lectura nocturna">◐</button>
+          <button class="icon-button" id="reset-button" aria-label="Reiniciar avance" title="Reiniciar avance">↺</button>
+        </div>
+      </header>
+
+      <section class="reader" id="reader" aria-live="polite">
+
+        <!-- 0 · Portada + Índice -->
+        <article class="spread is-visible" data-page="0">
+          <div class="page page--title">
+            <p class="kicker">Programación de sistemas y electrónica</p>
+            <div class="cover-art" aria-hidden="true">
+              <svg viewBox="0 0 460 130" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="26" y="38" width="72" height="54" rx="4"/>
+                <text x="62" y="70" font-family="DM Mono, monospace" font-size="13" stroke="none" fill="currentColor" text-anchor="middle">MCU</text>
+                <g stroke-width="1.1">
+                  <line x1="4" y1="48" x2="26" y2="48"/>
+                  <line x1="4" y1="60" x2="26" y2="60"/>
+                  <line x1="4" y1="72" x2="26" y2="72"/>
+                  <line x1="4" y1="84" x2="26" y2="84"/>
+                </g>
+                <line x1="98" y1="65" x2="176" y2="65" class="cover-art__pulse"/>
+                <circle cx="176" cy="65" r="3" fill="currentColor" stroke="none"/>
+                <line x1="176" y1="65" x2="176" y2="30" stroke-width="1.1"/>
+                <circle cx="176" cy="18" r="12"/>
+                <path d="M170 12 L182 24 M182 12 L170 24" stroke-width="1"/>
+                <line x1="176" y1="65" x2="230" y2="65" stroke-width="1.1"/>
+                <rect x="230" y="58" width="26" height="14" rx="2"/>
+                <line x1="256" y1="65" x2="300" y2="65" stroke-width="1.1"/>
+                <path d="M300 50 L336 65 L300 80 Z"/>
+                <line x1="336" y1="65" x2="336" y2="46" stroke-width="1"/>
+                <line x1="336" y1="65" x2="336" y2="84" stroke-width="1"/>
+                <line x1="336" y1="65" x2="360" y2="65" stroke-width="1.1"/>
+                <line x1="368" y1="52" x2="368" y2="78" stroke-width="2"/>
+                <line x1="378" y1="58" x2="378" y2="72" stroke-width="2"/>
+              </svg>
+            </div>
+            <h1>El software que toca<br>el mundo físico</h1>
+            <hr class="cover-rule">
+            <p class="subtitle">Un libro interactivo sobre C para microcontroladores</p>
+            <p class="drop">Un microcontrolador es una computadora completa —procesador, memoria y líneas de entrada y salida— reducida a un solo chip. A diferencia de una laptop o un teléfono, no corre un sistema operativo de por medio: el programa que tú escribes en C es, literalmente, lo único que existe entre el silicio y el mundo físico.</p>
+            <p>A este estilo de programación se le llama <em>bare metal</em> —metal desnudo—, y es la razón por la que C sigue siendo el lenguaje dominante en electrónica embebida: te deja manipular bits y direcciones de memoria exactas, con el mínimo de código posible y sin una capa de sistema operativo administrando recursos por ti.</p>
+            <p>En las siguientes páginas vas a recorrer ese camino completo —código en C, pin, voltaje, luz— y vas a terminar encendiendo un LED de verdad en un ESP32 simulado.</p>
+            <p class="page-num">1</p>
+          </div>
+          <div class="page page--index">
+            <h2>Tabla de contenido</h2>
+            <nav class="index-list" aria-label="Índice del libro">
+              <button class="toc__item index-link" data-page="1"><span>I. GPIO y el LED</span><i></i><b>pág. 3</b></button>
+              <button class="toc__item index-link" data-page="2"><span>II. Bits y registros</span><i></i><b>pág. 5</b></button>
+              <button class="toc__item index-link" data-page="3"><span>III. El reto: enciende un LED (con cuidado)</span><i></i><b>pág. 7</b></button>
+            </nav>
+            <div class="index-footer">
+              <p>Materiales para el reto</p>
+              <ul class="kit-list">
+                <li>1 × ESP32 / Arduino</li>
+                <li>1 × LED</li>
+                <li>1 × Resistor 220–330 Ω</li>
+                <li>Breadboard + jumpers</li>
+              </ul>
+            
+              <button class="text-button" data-next>Comenzar la lectura <span>→</span></button>
+            </div>
+            <p class="page-num">2</p>
+          </div>
+        </article>
+
+        <!-- I · GPIO y el LED -->
+        <article class="spread" data-page="1" hidden>
+          <div class="page">
+            <p class="eyebrow">CAPÍTULO I · ≈ 4 MIN</p>
+            <h2>GPIO y el LED</h2>
+            <p>La forma más simple en que un microcontrolador conversa con el mundo exterior es a través de sus pines <strong>GPIO</strong> (<em>General Purpose Input/Output</em>): líneas digitales que pueden configurarse como entrada o como salida según lo que necesite tu circuito.</p>
+            <p>Como salida —que es justo el caso de nuestro LED— un pin GPIO no entiende términos medios. Solo puede entregar uno de dos niveles de voltaje:</p>
+            <div class="state-table">
+              <div><strong>LOW</strong><span>0 · 0 V</span><small>LED apagado</small></div>
+              <div><strong>HIGH</strong><span>1 · 3.3 / 5 V</span><small>LED encendido</small></div>
+            </div>
+            <p>En código, esa decisión se toma en dos pasos. Primero declaras la intención del pin con <code>pinMode(13, OUTPUT)</code>; después decides su estado en cualquier momento con <code>digitalWrite(13, HIGH)</code> o <code>digitalWrite(13, LOW)</code>.</p>
+            <div class="definition"><span>IDEA CLAVE</span><p><code>pinMode()</code> prepara el pin una sola vez; <code>digitalWrite()</code> es la instrucción que de verdad mueve el voltaje, y puedes llamarla tantas veces como quieras.</p></div>
+            <p class="margin-note">El ESP32 trabaja normalmente a 3.3 V; otras placas usan 5 V. La lógica siempre es la misma: 0 o 1.</p>
+          </div>
+          <div class="page page--visual">
+            <p class="visual-label">PRUEBA EL PIN 13</p>
+            <div class="state-display" id="state-display">
+              <span class="state-display__led"></span>
+              <strong id="pin-state">LOW</strong>
+              <small id="pin-voltage">0 V · LED apagado</small>
+            </div>
+            <div class="state-controls" role="group" aria-label="Estado del pin">
+              <button class="state-choice is-selected" data-state="low">LOW <small>0 V</small></button>
+              <button class="state-choice" data-state="high">HIGH <small>5 V</small></button>
+            </div>
+            <div class="circuit-strip"><b>PIN 13</b><i>→</i><b>220 Ω</b><i>→</i><b>LED</b><i>→</i><b>GND</b></div>
+            <figure class="diagram" aria-hidden="false">
+              <svg viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="14" y="52" width="70" height="46" rx="3"/>
+                <text x="49" y="79" font-family="DM Mono, monospace" font-size="11" stroke="none" fill="currentColor" text-anchor="middle">ESP32</text>
+                <line x1="84" y1="65" x2="130" y2="65"/>
+                <text x="95" y="58" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor">PIN 13</text>
+                <path d="M130 65 h8 l6 -12 12 24 12 -24 12 24 12 -24 6 12 h8" stroke-width="1.3"/>
+                <text x="150" y="52" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor">220 Ω</text>
+                <line x1="216" y1="65" x2="252" y2="65"/>
+                <path d="M252 50 L286 65 L252 80 Z"/>
+                <line x1="286" y1="65" x2="286" y2="46" stroke-width="1"/>
+                <line x1="286" y1="65" x2="286" y2="84" stroke-width="1"/>
+                <text x="252" y="98" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor">LED</text>
+                <line x1="286" y1="65" x2="330" y2="65"/>
+                <line x1="330" y1="40" x2="330" y2="90"/>
+                <line x1="338" y1="52" x2="338" y2="78" stroke-width="2.2"/>
+                <line x1="346" y1="60" x2="346" y2="70" stroke-width="2.2"/>
+                <text x="322" y="105" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor">GND</text>
+                <g stroke-width="1">
+                  <line x1="14" y1="60" x2="4" y2="60"/>
+                  <line x1="14" y1="72" x2="4" y2="72"/>
+                  <line x1="14" y1="84" x2="4" y2="84"/>
+                </g>
+              </svg>
+              <figcaption>Diagrama del circuito · Pin 13 → resistor → LED → GND</figcaption>
+            </figure>
+            <p class="interaction-hint">Cambia el estado y observa el LED: es el mismo cambio que harás en el reto del capítulo III.</p>
+            <a class="resource-link" href="https://www.build-electronic-circuits.com/arduino-blink-led/" target="_blank" rel="noopener"><span>GUÍA DE ARMADO</span>Cómo cablear este mismo circuito con un LED real <b>↗</b></a>
+            <p class="page-num">3</p>
+          </div>
+        </article>
+
+        <!-- II · Bits y registros -->
+        <article class="spread" data-page="2" hidden>
+          <div class="page">
+            <p class="eyebrow">CAPÍTULO II · ≈ 4 MIN</p>
+            <h2>Bits y registros</h2>
+            <p><code>digitalWrite()</code> es cómoda, pero no es magia: es una función que, por debajo, modifica un registro. Un registro es una casilla de memoria, del tamaño de un byte o más, conectada directamente al hardware del chip. Cambiar un bit de esa casilla cambia de verdad el voltaje de un pin físico.</p>
+            <p>En los microcontroladores AVR —la familia detrás del Arduino Uno— tres registros bastan para controlar un pin digital:</p>
+            <div class="register-legend">
+              <div><strong>1 · DDRx</strong><span>Marca el pin como <b>entrada</b> o <b>salida</b>.</span></div>
+              <div><strong>2 · PORTx</strong><span>Escribe <b>0</b> o <b>1</b> en una salida.</span></div>
+              <div><strong>3 · PINx</strong><span>Lee el estado cuando el pin es entrada.</span></div>
+            </div>
+            <p>Encender el pin 13 con registros crudos se ve así:</p>
+            <pre><code>digitalWrite(13, HIGH);  // tú escribes<br>PORTB |= (1 &lt;&lt; 5);      // el registro cambia</code></pre>
+            <p>El operador <code>&lt;&lt;</code> desplaza un 1 hasta la posición del bit 5, y <code>|=</code> lo combina con lo que ya había en <code>PORTB</code> sin tocar los otros siete bits. Es exactamente la misma idea que verás en el registro interactivo de al lado.</p>
+            <figure class="diagram">
+              <svg viewBox="0 0 420 110" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.3">
+                <text x="6" y="20" font-family="DM Mono, monospace" font-size="10" stroke="none" fill="currentColor">PORTB</text>
+                <g font-family="DM Mono, monospace" font-size="11" stroke="none" fill="currentColor" text-anchor="middle">
+                  <rect x="6" y="28" width="30" height="30" stroke="currentColor" fill="none"/><text x="21" y="48">0</text>
+                  <rect x="36" y="28" width="30" height="30" stroke="currentColor" fill="none"/><text x="51" y="48">0</text>
+                  <rect x="66" y="28" width="30" height="30" stroke="currentColor" fill="none"/><text x="81" y="48">0</text>
+                  <rect x="96" y="28" width="30" height="30" stroke-width="2"/><text x="111" y="48">1</text>
+                  <rect x="126" y="28" width="30" height="30" stroke="currentColor" fill="none"/><text x="141" y="48">0</text>
+                  <rect x="156" y="28" width="30" height="30" stroke="currentColor" fill="none"/><text x="171" y="48">0</text>
+                  <rect x="186" y="28" width="30" height="30" stroke="currentColor" fill="none"/><text x="201" y="48">0</text>
+                  <rect x="216" y="28" width="30" height="30" stroke="currentColor" fill="none"/><text x="231" y="48">0</text>
+                </g>
+                <text x="111" y="70" font-family="DM Mono, monospace" font-size="9" stroke="none" fill="currentColor" text-anchor="middle">bit 5</text>
+                <path d="M111 74 V88 H285" stroke-width="1.1"/>
+                <path d="M279 83 L285 88 L279 93" stroke-width="1.1"/>
+                <text x="296" y="92" font-family="DM Mono, monospace" font-size="11" stroke="none" fill="currentColor">PIN 13</text>
+              </svg>
+              <figcaption>PORTB en binario · el bit 5 es el único conectado al pin 13</figcaption>
+            </figure>
+            <p class="margin-note">Este ejemplo es AVR/Arduino Uno: el bit 5 de PORTB equivale al pin 13. El ESP32 usa otros registros, pero la relación bit → pin es idéntica.</p>
+          </div>
+          <div class="page page--visual">
+            <p class="visual-label">EXPERIMENTO · PORTB</p>
+            <div class="bit-task"><span>RETO DEL REGISTRO</span><p>Activa solamente el bit marcado para encender el pin 13.</p></div>
+            <div class="register" id="register" aria-label="Registro PORTB interactivo"></div>
+            <div class="register-info">
+              <span id="register-binary">00000000</span>
+              <p id="register-description">Cada casilla es un bit. El registro empieza apagado.</p>
+            </div>
+            <button class="text-button" id="clear-register">Restaurar PORTB a 0 <span>↺</span></button>
+            <p class="interaction-hint">Cambiar un solo bit no altera a los otros siete: por eso se usa <code>|=</code> y no una asignación directa.</p>
+            <div class="resource-stack">
+              <a class="resource-link" href="https://ccrma.stanford.edu/~fgeorg/250a/lab2/arduino-0019/reference/DigitalWrite.html" target="_blank" rel="noopener"><span>REFERENCIA</span>digitalWrite(), documentación técnica <b>↗</b></a>
+              <a class="resource-link" href="https://github.com/mgottschlag/stm32-pin-tools/blob/master/README.md" target="_blank" rel="noopener"><span>PARA EL CURIOSO</span>Mapeo real de registros en STM32 <b>↗</b></a>
+            </div>
+            <p class="page-num">5</p>
+          </div>
+        </article>
+
+        <!-- III · El reto y la memoria, fusionados en un solo capítulo -->
+        <article class="spread" data-page="3" hidden>
+          <div class="page">
+            <p class="eyebrow">CAPÍTULO III · RETO EN WOKWI</p>
+            <h2>El reto: enciende un LED<br>(con cuidado)</h2>
+            <p>Ya sabes qué hace <code>digitalWrite()</code> por dentro. Toca comprobarlo sobre hardware real, simulado en Wokwi. El circuito ya está armado: solo te falta cambiar una palabra.</p>
+            <ol class="challenge-steps">
+              <li><b>Localiza</b> la línea <code>digitalWrite(13, LOW)</code>.</li>
+              <li><b>Cámbiala</b> por <code>digitalWrite(13, HIGH)</code>.</li>
+              <li><b>Inicia</b> la simulación y verifica que el LED encienda.</li>
+            </ol>
+            <div class="code-editor">
+              <div class="code-editor__bar"><span></span><span></span><span></span><b>referencia.ino · solo lectura</b></div>
+              <pre><code><span class="line-no">1</span>void setup() {
+<span class="line-no">2</span>  pinMode(13, OUTPUT);
+<span class="line-no">3</span>}
+<span class="line-no">4</span>
+<span class="line-no">5</span>void loop() {
+<span class="line-no">6</span>  digitalWrite(13, LOW);  <span class="code-comment">// cambia LOW por HIGH</span>
+<span class="line-no">7</span>}</code></pre>
+            </div>
+            <hr class="chapter-divider">
+            <h3>Una advertencia sobre la memoria</h3>
+            <p>La misma cercanía con el hardware que te dejó mover un bit tiene un costo: C confía ciegamente en ti. No verifica los límites de un arreglo, así que escribir fuera de él no lanza ningún error de compilación, simplemente corrompe la memoria que sigue.</p>
+            <pre><code>char estado[4] = "off";  // índices válidos: 0..3<br>int led = 0;<br><br>estado[4] = 'n';          // escribe fuera del arreglo</code></pre>
+            <div class="definition warning"><span>EFECTO POSIBLE</span><p>Ese carácter de más puede pisar la variable <code>led</code>, que queda con un valor de basura. En un entorno de C en el navegador suele aparecer <code>memory access out of bounds</code>; en un microcontrolador real, el fallo puede ser mucho más silencioso.</p></div>
+            <p class="margin-note">No ejecutes este patrón en tu propio proyecto. La visualización de la derecha es segura y solo ilustra la idea.</p>
+          </div>
+          <div class="page page--visual">
+            <p class="visual-label">SIMULADOR WOKWI · RETO FÁCIL</p>
+            <div class="wokwi-embed">
+              <iframe src="https://wokwi.com/projects/474443252072748033" title="Reto fácil: encender un LED en Wokwi" loading="lazy" allow="clipboard-write" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+              <a href="https://wokwi.com/projects/474443252072748033" target="_blank" rel="noopener">Abrir el reto en Wokwi ↗</a>
+            </div>
+            <hr class="chapter-divider">
+            <p class="visual-label">VISUALIZACIÓN · BUFFER OVERFLOW</p>
+            <div class="memory-layout" id="memory-layout">
+              <div class="memory-row"><span class="memory-name">estado[0..3]</span><div class="memory-cells"><b>'o'</b><b>'f'</b><b>'f'</b><b>'\0'</b></div></div>
+              <div class="memory-row"><span class="memory-name">siguiente</span><div class="memory-neighbor" id="memory-neighbor">led = 0</div></div>
+            </div>
+            <button class="memory-button" id="memory-write">Simular <code>estado[4] = 'n'</code></button>
+            <p class="memory-status" id="memory-status">El arreglo termina después de <code>estado[3]</code>.</p>
+            <div class="resource-stack">
+              <a class="resource-link" href="https://www.oreilly.com/library/view/embedded-c-programming/9780128013144/xhtml/B9780128013144000168.xhtml" target="_blank" rel="noopener"><span>LECTURA</span>Embedded C Programming: manejo de memoria <b>↗</b></a>
+            </div>
+          
+            <button class="text-button" id="restart-book">Volver a la portada <span>↺</span></button>
+            <p class="page-num">7</p>
+          </div>
+        </article>
+
+      </section>
+
+      <footer class="reader-controls">
+        <button class="nav-button" id="previous-page" disabled><span>‹</span> Anterior</button>
+        <div class="pagination" id="pagination" aria-label="Página actual"></div>
+        <button class="nav-button nav-button--next" id="next-page">Siguiente <span>›</span></button>
+      </footer>
+    </main>
+  </div>
+  <div class="sidebar-scrim" id="sidebar-scrim"></div>
+  <script src="wwwroot/app.js"></script>
+</body>
+</html>
